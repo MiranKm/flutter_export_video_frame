@@ -1,4 +1,4 @@
-#  flutter_export_video_frame Updated 
+#  flutter_export_video_frame Updated, Doesn't support IOS! 
 
 A new Flutter project.
 
