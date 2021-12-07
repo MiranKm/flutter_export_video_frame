@@ -18,6 +18,6 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    expect(await VideoFrame.platformVersion, '42');
+    expect(await ExportVideoFrame.platformVersion, '42');
   });
 }

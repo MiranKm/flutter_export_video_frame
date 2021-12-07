@@ -51,7 +51,7 @@ class _MyAppState extends State<MyApp> {
     // We also handle the message potentially returning null.
     try {
       platformVersion =
-          await VideoFrame.platformVersion ?? 'Unknown platform version';
+          await ExportVideoFrame.platformVersion ?? 'Unknown platform version';
     } on PlatformException {
 
       platformVersion = 'Failed to get platform version.';
@@ -72,7 +72,7 @@ class _MyAppState extends State<MyApp> {
   Future _getImagesByTime() async {
     final XFile? file = await _picker.pickVideo(
         source: ImageSource.gallery);
-    _imagesStream = VideoFrame.exportImagesFromFile(
+    _imagesStream = ExportVideoFrame.exportImagesFromFile(
       File(file!.path),
       const Duration(milliseconds: 500),
       pi / 2,
@@ -92,7 +92,7 @@ class _MyAppState extends State<MyApp> {
   Future _getImages() async {
     final XFile? file = await _picker.pickVideo(
         source: ImageSource.gallery,);
-    var images = await VideoFrame.exportImage(file!.path, 10, 100);
+    var images = await ExportVideoFrame.exportImage(file!.path, 10, 100);
     var result = images.map((file) => Image.file(file)).toList();
     setState(() {
       widget.images.addAll(result);
@@ -104,7 +104,7 @@ class _MyAppState extends State<MyApp> {
     final XFile? file =
     await _picker.pickImage(source: ImageSource.gallery);
 
-    var images = await VideoFrame.exportGifImage(file!.path, 0);
+    var images = await ExportVideoFrame.exportGifImage(file!.path, 0);
     var result = images.map((file) => Image.file(file)).toList();
     setState(() {
       widget.images.addAll(result);
@@ -118,19 +118,20 @@ class _MyAppState extends State<MyApp> {
     final File file = File(pickedFile!.path);
     var duration = Duration(seconds: 1);
     var image =
-    await VideoFrame.exportImageBySeconds(file, duration, 0);
+    await ExportVideoFrame.exportImageBySeconds(file, duration, 0);
     setState(() {
       widget.images.add(Image.file(image));
       _isClean = true;
     });
-    await VideoFrame.saveImage(image, "Video Export Demo",
+    
+    await ExportVideoFrame.saveImage(image, "Video Export Demo",
         waterMark: "images/water_mark.png",
         alignment: Alignment.bottomLeft,
         scale: 2.0);
   }
 
   Future _cleanCache() async {
-    var result = await VideoFrame.cleanImageCache();
+    var result = await ExportVideoFrame.cleanImageCache();
     print(result);
     setState(() {
       widget.images.clear();

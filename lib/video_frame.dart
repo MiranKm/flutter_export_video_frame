@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:media_info/media_info.dart';
 
-class VideoFrame {
+class ExportVideoFrame {
   static const MethodChannel _channel = MethodChannel('video_frame');
 
   static Future<String?> get platformVersion async {
