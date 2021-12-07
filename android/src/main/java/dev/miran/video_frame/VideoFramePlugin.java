@@ -38,11 +38,10 @@ public class VideoFramePlugin implements FlutterPlugin, MethodCallHandler, Activ
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
     channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "video_frame");
+    channel.setMethodCallHandler(this);
     this.flutterPluginBinding = flutterPluginBinding;
     FileStorage.share().setContext(flutterPluginBinding.getApplicationContext());
     AblumSaver.share().setCurrent(flutterPluginBinding.getApplicationContext());
-    VideoFramePlugin plugin = new VideoFramePlugin();
-    channel.setMethodCallHandler(this);
   }
 
 
