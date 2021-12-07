@@ -6,7 +6,7 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:video_frame/export_video_frame.dart';
+import 'package:export_video_frame/export_video_frame.dart';
 
 void main() {
   runApp( MyApp(images: <Image>[]));

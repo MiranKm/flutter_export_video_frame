@@ -43,7 +43,6 @@ public class VideoFramePlugin implements FlutterPlugin, MethodCallHandler, Activ
     AblumSaver.share().setCurrent(flutterPluginBinding.getApplicationContext());
     VideoFramePlugin plugin = new VideoFramePlugin();
     channel.setMethodCallHandler(this);
-//    plugin.onAttachedToEngine(flutterPluginBinding);
   }
 
 
