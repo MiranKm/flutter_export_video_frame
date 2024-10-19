@@ -15,19 +15,7 @@
 *.iws
 .idea/
 
-<<<<<<< HEAD
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
 
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-=======
 # Visual Studio Code related
 .vscode/
 
@@ -35,27 +23,12 @@
 **/doc/api/
 .dart_tool/
 .flutter-plugins
->>>>>>> upstream/master
 .packages
 .pub-cache/
 .pub/
 /build/
 
-<<<<<<< HEAD
-# Web related
-lib/generated_plugin_registrant.dart
 
-# Symbolication related
-app.*.symbols
-
-# Obfuscation related
-app.*.map.json
-
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
-=======
 # Android related
 **/android/**/gradle-wrapper.jar
 **/android/.gradle
@@ -97,4 +70,3 @@ app.*.map.json
 !**/ios/**/default.pbxuser
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
->>>>>>> upstream/master

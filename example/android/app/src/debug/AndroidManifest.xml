@@ -1,9 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
-    package="dev.miran.video_frame_example">
-=======
+
     package="com.mengtnt.export_video_frame_example">
->>>>>>> upstream/master
     <!-- Flutter needs it to communicate with the running application
          to allow setting breakpoints, to provide hot reload, etc.
     -->

@@ -5,8 +5,7 @@
 .pub/
 
 build/
-<<<<<<< HEAD
-=======
+
 
 # Android related
 **/android/captures/
@@ -38,4 +37,3 @@ build/
 **/ios/Flutter/flutter_assets/
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
->>>>>>> upstream/master

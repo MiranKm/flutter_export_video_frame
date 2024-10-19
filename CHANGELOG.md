@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-## 0.0.1
-
-* TODO: Describe initial release.
-=======
 # CHANGELOG
 
 ## 0.0.1
@@ -85,4 +80,3 @@ add new api
 ### 0.0.7
 
 * support Android embedding v2
->>>>>>> upstream/master

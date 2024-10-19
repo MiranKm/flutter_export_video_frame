@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-
-import 'dart:async';
-import 'dart:io';
-
-import 'package:flutter/material.dart';
-=======
-/** 
+/**
 MIT License
 
 Copyright (c) 2019 mengtnt
@@ -32,25 +25,13 @@ SOFTWARE.
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
->>>>>>> upstream/master
 import 'package:flutter/services.dart';
 import 'package:media_info/media_info.dart';
 
 class ExportVideoFrame {
-<<<<<<< HEAD
-  static const MethodChannel _channel = MethodChannel('video_frame');
 
-  static Future<String?> get platformVersion async {
-    final String? version = await _channel.invokeMethod('getPlatformVersion');
-    print("getting version: ${version}");
-    return version;
-  }
-
-
-=======
   static const MethodChannel _channel =
       const MethodChannel('export_video_frame');
->>>>>>> upstream/master
 
   static bool workOnImages = false;
   static bool stopWoringOnImages = false;
@@ -128,12 +109,7 @@ class ExportVideoFrame {
   static Future<List<File>> exportGifImage(
       String? filePath, double quality) async {
     var para = {"filePath": filePath, "quality": quality};
-    final List<dynamic> list =
-<<<<<<< HEAD
-    await _channel.invokeMethod('exportGifImagePathList', para);
-=======
-        await _channel.invokeMethod('exportGifImagePathList', para);
->>>>>>> upstream/master
+    final List<dynamic> list = await _channel.invokeMethod('exportGifImagePathList', para);
     var result = list
         .cast<String>()
         .map((path) => File.fromUri(Uri.file(path)))
@@ -152,11 +128,8 @@ class ExportVideoFrame {
     var milli = duration.inMilliseconds;
     var para = {"filePath": file.path, "duration": milli, "radian": radian};
     final String path =
-<<<<<<< HEAD
-    await _channel.invokeMethod('exportImageBySeconds', para);
-=======
+
         await _channel.invokeMethod('exportImageBySeconds', para);
->>>>>>> upstream/master
     try {
       var result = File.fromUri(Uri.file(path));
       return result;

@@ -1,58 +1,29 @@
-<<<<<<< HEAD
-group 'dev.miran.video_frame'
-version '1.0'
-=======
 group 'com.mengtnt.export_video_frame'
 version '1.0-SNAPSHOT'
->>>>>>> upstream/master
 
 buildscript {
     repositories {
         google()
-<<<<<<< HEAD
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
-=======
         jcenter()
     }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
         classpath 'org.jetbrains:annotations-java5:15.0'
->>>>>>> upstream/master
     }
 }
 
 rootProject.allprojects {
     repositories {
         google()
-<<<<<<< HEAD
-        mavenCentral()
-=======
+
         jcenter()
->>>>>>> upstream/master
     }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-<<<<<<< HEAD
-    compileSdkVersion 30
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
-    defaultConfig {
-        minSdkVersion 16
-    }
-}
-=======
     compileSdkVersion 28
 
     defaultConfig {
@@ -67,4 +38,3 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.0.2'
 }
->>>>>>> upstream/master

@@ -1,19 +1,5 @@
 import 'dart:io';
 import 'dart:math';
-
-<<<<<<< HEAD
-import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:export_video_frame/export_video_frame.dart';
-
-void main() {
-  runApp( MyApp(images: <Image>[]));
-}
-
-=======
 /** 
 MIT License
 
@@ -57,7 +43,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
->>>>>>> upstream/master
 
 class ImageItem extends StatelessWidget {
   ImageItem({required this.image}) : super(key: ObjectKey(image));
@@ -69,19 +54,7 @@ class ImageItem extends StatelessWidget {
   }
 }
 
-<<<<<<< HEAD
-class MyApp extends StatefulWidget {
-  List<Image> images;
 
- MyApp({Key? key, required this.images}) : super(key: key);
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-=======
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.images}) : super(key: key);
 
@@ -92,60 +65,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
->>>>>>> upstream/master
   var _isClean = false;
   final ImagePicker _picker = ImagePicker();
   Stream<File>? _imagesStream;
 
-<<<<<<< HEAD
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
-    try {
-      platformVersion =
-          await ExportVideoFrame.platformVersion ?? 'Unknown platform version';
-    } on PlatformException {
-
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
-  }
-
-
-
-  Future _getImagesByTime() async {
-    final XFile? file = await _picker.pickVideo(
-        source: ImageSource.gallery);
-=======
   Future _getImagesByTime() async {
     final PickedFile? file = await _picker.getVideo(
         source: ImageSource.gallery, maxDuration: const Duration(seconds: 10));
->>>>>>> upstream/master
     _imagesStream = ExportVideoFrame.exportImagesFromFile(
       File(file!.path),
       const Duration(milliseconds: 500),
       pi / 2,
-<<<<<<< HEAD
-    ) ;
-=======
+
     );
->>>>>>> upstream/master
 
     setState(() {
       _isClean = true;
@@ -153,25 +86,16 @@ class _MyHomePageState extends State<MyHomePage> {
 
     _imagesStream!.listen((image) {
       setState(() {
-<<<<<<< HEAD
-        widget.images.add(Image.file(File(image.path)));
-=======
         widget.images.add(Image.file(image));
->>>>>>> upstream/master
       });
     });
   }
 
   Future _getImages() async {
-<<<<<<< HEAD
-    final XFile? file = await _picker.pickVideo(
-        source: ImageSource.gallery,);
-    var images = await ExportVideoFrame.exportImage(file!.path, 10, 100);
-=======
+
     final PickedFile? file = await _picker.getVideo(
         source: ImageSource.gallery, maxDuration: const Duration(seconds: 10));
     var images = await ExportVideoFrame.exportImage(file!.path, 10, 0);
->>>>>>> upstream/master
     var result = images.map((file) => Image.file(file)).toList();
     setState(() {
       widget.images.addAll(result);
@@ -180,13 +104,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future _getGifImages() async {
-<<<<<<< HEAD
-    final XFile? file =
-    await _picker.pickImage(source: ImageSource.gallery);
-=======
+
     final PickedFile? file =
         await _picker.getImage(source: ImageSource.gallery);
->>>>>>> upstream/master
 
     var images = await ExportVideoFrame.exportGifImage(file!.path, 0);
     var result = images.map((file) => Image.file(file)).toList();
@@ -197,29 +117,18 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future _getImagesByDuration() async {
-<<<<<<< HEAD
-    final XFile? pickedFile =
-    await _picker.pickVideo(source: ImageSource.gallery);
-    final File file = File(pickedFile!.path);
-    var duration = Duration(seconds: 1);
-    var image =
-    await ExportVideoFrame.exportImageBySeconds(file, duration, 0);
-=======
+
     final PickedFile? pickedFile =
         await _picker.getImage(source: ImageSource.gallery);
     final File file = File(pickedFile!.path);
     var duration = Duration(seconds: 1);
     var image =
         await ExportVideoFrame.exportImageBySeconds(file, duration, pi / 2);
->>>>>>> upstream/master
     setState(() {
       widget.images.add(Image.file(image));
       _isClean = true;
     });
-<<<<<<< HEAD
-    
-=======
->>>>>>> upstream/master
+
     await ExportVideoFrame.saveImage(image, "Video Export Demo",
         waterMark: "images/water_mark.png",
         alignment: Alignment.bottomLeft,
@@ -267,21 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
-<<<<<<< HEAD
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Column(
-          children: [
-            Center(
-              child: Text('Running on: $_platformVersion\n'),
-            ),
-=======
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -292,7 +187,6 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: EdgeInsets.zero,
         child: Column(
           children: <Widget>[
->>>>>>> upstream/master
             Expanded(
               flex: 1,
               child: GridView.extent(
@@ -303,13 +197,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   crossAxisSpacing: 4,
                   children: widget.images.length > 0
                       ? widget.images
-<<<<<<< HEAD
-                      .map((image) => ImageItem(image: image))
-                      .toList()
-=======
                           .map((image) => ImageItem(image: image))
                           .toList()
->>>>>>> upstream/master
                       : [Container()]),
             ),
             Expanded(

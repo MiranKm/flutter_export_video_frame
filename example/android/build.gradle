@@ -1,41 +1,29 @@
 buildscript {
     repositories {
         google()
-<<<<<<< HEAD
-        mavenCentral()
-    }
 
-    dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
-=======
         jcenter()
     }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
->>>>>>> upstream/master
     }
 }
 
 allprojects {
     repositories {
         google()
-<<<<<<< HEAD
-        mavenCentral()
-=======
+
         jcenter()
->>>>>>> upstream/master
     }
 }
 
 rootProject.buildDir = '../build'
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
-<<<<<<< HEAD
-=======
+
 }
 subprojects {
->>>>>>> upstream/master
     project.evaluationDependsOn(':app')
 }
 
