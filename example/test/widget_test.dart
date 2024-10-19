@@ -8,18 +8,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+<<<<<<< HEAD
 import 'package:video_frame_example/main.dart';
+=======
+import 'package:export_video_frame_example/main.dart';
+>>>>>>> upstream/master
 
 void main() {
   testWidgets('Verify Platform version', (WidgetTester tester) async {
     // Build our app and trigger a frame.
+<<<<<<< HEAD
     await tester.pumpWidget(const MyApp());
+=======
+    await tester.pumpWidget(MyApp());
+>>>>>>> upstream/master
 
     // Verify that platform version is retrieved.
     expect(
       find.byWidgetPredicate(
+<<<<<<< HEAD
         (Widget widget) => widget is Text &&
                            widget.data!.startsWith('Running on:'),
+=======
+        (Widget widget) =>
+            widget is Text && widget.data!.startsWith('Running on:'),
+>>>>>>> upstream/master
       ),
       findsOneWidget,
     );

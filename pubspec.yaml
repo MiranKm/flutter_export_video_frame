@@ -1,4 +1,5 @@
 name: export_video_frame
+<<<<<<< HEAD
 description: A new Flutter project.
 version: 0.0.1
 homepage:
@@ -10,12 +11,25 @@ environment:
 dependencies:
   media_info: ^0.9.0
 
+=======
+description: A Flutter plugin for iOS and Android for exporting picture from video file.
+version: 0.0.7
+homepage: https://github.com/animeng/flutter_export_video_frame
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.12.0"
+
+dependencies:
+  media_info: ^0.7.0
+>>>>>>> upstream/master
   flutter:
     sdk: flutter
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+<<<<<<< HEAD
   flutter_lints: ^1.0.0
 
 # For information on the generic Dart part of this file, see the
@@ -63,3 +77,14 @@ flutter:
   #
   # For details regarding fonts in packages, see
   # https://flutter.dev/custom-fonts/#from-packages
+=======
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.mengtnt.export_video_frame
+        pluginClass: ExportVideoFramePlugin
+      ios:
+        pluginClass: ExportVideoFramePlugin
+>>>>>>> upstream/master
