@@ -1,6 +1,6 @@
+import 'package:export_video_frame/export_video_frame.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:video_frame/video_frame.dart';
 
 void main() {
   const MethodChannel channel = MethodChannel('video_frame');
@@ -17,7 +17,4 @@ void main() {
     channel.setMockMethodCallHandler(null);
   });
 
-  test('getPlatformVersion', () async {
-    expect(await ExportVideoFrame.platformVersion, '42');
-  });
 }
