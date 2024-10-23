@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce1f9772-2071-43bd-ad40-4897f2d078cf" name="Changes" comment="removes package name in manifest">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/example/.flutter-plugins-dependencies" afterDir="false" />
-    </list>
+    <list default="true" id="ce1f9772-2071-43bd-ad40-4897f2d078cf" name="Changes" comment="updates compile sdk version" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -140,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729621602182</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="updates compile sdk version">
+      <option name="closed" value="true" />
+      <created>1729713162627</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1729713162627</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -156,6 +160,7 @@
     <MESSAGE value="handles media info namespace issue" />
     <MESSAGE value="never mind, dependency_override worked" />
     <MESSAGE value="removes package name in manifest" />
-    <option name="LAST_COMMIT_MESSAGE" value="removes package name in manifest" />
+    <MESSAGE value="updates compile sdk version" />
+    <option name="LAST_COMMIT_MESSAGE" value="updates compile sdk version" />
   </component>
 </project>
