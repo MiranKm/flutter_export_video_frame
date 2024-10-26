@@ -24,9 +24,9 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 28
-
+    namespace "com.mengtnt.export_video_frame"
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 26
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
