@@ -27,9 +27,7 @@ package com.mengtnt.export_video_frame;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Point;
 import android.graphics.PointF;
-import android.graphics.RectF;
 
 import java.io.InputStream;
 import java.util.ArrayList;

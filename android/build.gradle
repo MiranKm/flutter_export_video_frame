@@ -1,6 +1,7 @@
 group 'com.mengtnt.export_video_frame'
 version '1.0-SNAPSHOT'
 
+apply plugin: "com.android.library"
 buildscript {
     repositories {
         google()
@@ -8,7 +9,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.android.tools.build:gradle:7.4.0'
         classpath 'org.jetbrains:annotations-java5:15.0'
     }
 }
@@ -20,7 +21,6 @@ rootProject.allprojects {
     }
 }
 
-apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 34

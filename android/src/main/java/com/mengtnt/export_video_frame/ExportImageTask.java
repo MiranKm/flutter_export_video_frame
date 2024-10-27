@@ -29,9 +29,9 @@ import android.media.MediaMetadataRetriever;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
@@ -56,14 +56,22 @@ final class ExportImageTask extends AsyncTask<Object,Void,ArrayList<String>> {
             if (number > 0) {
                 Number third = (Number) objects[2];
                 float quality = third.floatValue();
-                return  exportImageList(filePath,number,quality);
+                try {
+                    return exportImageList(filePath,number,quality);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         } else if (param instanceof Long) {
             Long duration = (Long)param;
             Number third = (Number)objects[2];
             float radian = third.floatValue();
-            ArrayList result = new ArrayList(1);
-            result.add(exportImageByDuration(filePath,duration,radian));
+            ArrayList<String> result = new ArrayList<>(1);
+            try {
+                result.add(exportImageByDuration(filePath,duration,radian));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
             return result;
         } else if (param instanceof Number) {
             Number second = (Number)param;
@@ -74,7 +82,7 @@ final class ExportImageTask extends AsyncTask<Object,Void,ArrayList<String>> {
     }
 
     protected ArrayList<String> exportGifImageList(String filePath,float quality) {
-        ArrayList result = new ArrayList();
+        ArrayList<String> result = new ArrayList<String>();
         GifDecoder decoder = new GifDecoder();
         try {
             InputStream input = new FileInputStream(filePath);
@@ -94,8 +102,8 @@ final class ExportImageTask extends AsyncTask<Object,Void,ArrayList<String>> {
         return result;
     }
 
-    protected  String exportImageByDuration(String filePath,Long duration,float radian) {
-        String result = new String();
+    protected  String exportImageByDuration(String filePath,Long duration,float radian) throws IOException {
+        String result = "";
         MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
         try {
             mediaMetadataRetriever.setDataSource(filePath);
@@ -121,8 +129,8 @@ final class ExportImageTask extends AsyncTask<Object,Void,ArrayList<String>> {
         return result;
     }
 
-    protected ArrayList<String> exportImageList(String filePath,int number,float quality) {
-        ArrayList result = new ArrayList(number);
+    protected ArrayList<String> exportImageList(String filePath,int number,float quality) throws IOException {
+        ArrayList<String> result = new ArrayList<String>(number);
         float scale = (float)0.1;
         if (quality > 0.1) {
             scale = quality;
